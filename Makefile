@@ -1,5 +1,6 @@
 PRG=game.prg
 SRC=main.c text.s
+INCLUDE=*.h
 
 all: $(PRG)
 
@@ -9,5 +10,5 @@ clean:
 run: $(PRG)
 	x64 +confirmexit $<
 
-$(PRG): $(SRC)
-	cl65 -O -t c64 -o $@ $^
+$(PRG): $(SRC) $(INCLUDE)
+	cl65 -O -t c64 -o $@ $(SRC)
