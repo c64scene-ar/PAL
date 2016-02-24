@@ -4,7 +4,7 @@
 
 #include "common.h"
 #include "game.h"
-#include "game_data.h"
+#include "gen_game.h"
 
 extern const char text[];
 

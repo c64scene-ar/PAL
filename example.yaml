@@ -1,0 +1,9 @@
+---
+game:
+  rooms:
+    lounge:
+      description: This is quite a plain lounge with an old beige carpet and peeling wallpaper.
+      south: kitchen
+    kitchen:
+      description: Just an ordinary kitchen.
+      north: lounge

@@ -1,3 +1,4 @@
 *.o
 main.s
 game.prg
+gen_*.h

@@ -1,6 +1,9 @@
+SPEC=example.yaml
 PRG=game.prg
+
 SRC=main.c game.c text.s
-INCLUDE=*.h
+BUILD=build.rb
+ERB=*.erb
 
 all: $(PRG)
 
@@ -10,5 +13,8 @@ clean:
 run: $(PRG)
 	x64 +confirmexit $<
 
-$(PRG): $(SRC) $(INCLUDE)
+gen_files: $(BUILD) $(SPEC) *.erb
+	./$(BUILD) $(SPEC)
+
+$(PRG): $(SRC) *.h gen_files
 	cl65 -O -t c64 -o $@ $(SRC)
