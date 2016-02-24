@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <conio.h>
 
+#include "common.h"
 #include "game.h"
 #include "game_data.h"
 

@@ -1,5 +1,5 @@
 PRG=game.prg
-SRC=main.c text.s
+SRC=main.c game.c text.s
 INCLUDE=*.h
 
 all: $(PRG)
