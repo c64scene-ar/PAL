@@ -1,4 +1,4 @@
-if64
-====
+Pungaventura
+============
 
-if64 is an interactive fiction (i.e text adventure) maker for Commodore 64.
+A text adventure game for Commodore 64 (spanish).
