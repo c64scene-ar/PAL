@@ -8,8 +8,20 @@ end
 require "yaml"
 require "erb"
 
+EXITS = %w(north north_east east south_east south south_west west north_west)
+
 def string(value)
   value.nil? ? "NULL" : "\"#{value}\""
+end
+
+def parse_exit_id(exit_id)
+  exit_id.to_s.split('_').map { |s| s[0] }.join('').upcase
+end
+
+def exits_from_attrs(attrs)
+  attrs.select { |k, _| EXITS.include?(k) }
+    .map { |k, v| [parse_exit_id(k), v] }
+    .to_h
 end
 
 def generate(name)
@@ -17,6 +29,7 @@ def generate(name)
   erb = ERB.new(tpl)
   File.write("gen_#{name}.h", erb.result)
 end
+
 
 doc = YAML.load_file(ARGV[0])
 
