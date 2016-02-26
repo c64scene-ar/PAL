@@ -8,6 +8,7 @@ end
 require "yaml"
 require "erb"
 
+CURRENT_DIR = File.expand_path(File.dirname(__FILE__))
 EXITS = %w(north north_east east south_east south south_west west north_west)
 
 def string(value)
@@ -29,9 +30,10 @@ def exits_from_attrs(attrs)
 end
 
 def generate(name)
-  tpl = File.read("#{name}.erb")
+  path = File.join(CURRENT_DIR, "#{name}.erb")
+  tpl = File.read(path)
   erb = ERB.new(tpl)
-  File.write("gen_#{name}.h", erb.result)
+  File.write(File.join(File.dirname(__FILE__), "gen_#{name}.h"), erb.result)
 end
 
 

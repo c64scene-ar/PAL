@@ -1,6 +1,6 @@
 *.o
 main.s
-game.prg
 gen_*.h
 *sublime-project
 *sublime-workspace
+bin
