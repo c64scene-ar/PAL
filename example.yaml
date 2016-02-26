@@ -1,9 +1,22 @@
 ---
 game:
   rooms:
-    lounge:
-      description: This is quite a plain lounge with an old beige carpet and peeling wallpaper.
-      south: kitchen
-    kitchen:
-      description: Just an ordinary kitchen.
-      north: lounge
+    living:
+      prefix: el
+      description: Te encontras en un living room algo pequeno y sucio, con un
+        sofa individual y un televisor que apenas quepan.
+      south: cocina
+      objects:
+        - sofa
+        - televisor
+    cocina:
+      prefix: la
+      description: Una cocina ordinaria. Es aun mas pequena que el living.
+        Cerca de la puerta ves un freezer y un microondas arriba de el. La
+        bacha esta llena de platos. Supones que de la noche anterior.
+      north: living
+      objects:
+        - freezer
+        - microondas
+        - bacha
+        - platos

@@ -6,6 +6,7 @@
 <% rooms.each do |room_id, attrs| %>
   static Room <%= room_id %> = {
       <%= string(attrs['name'] || room_id) %>,
+      <%= string(attrs['prefix']) %>,
       <%= string(attrs['alias']) %>,
       <%= string(attrs['description']) %>,
       { NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL },

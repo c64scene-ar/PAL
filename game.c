@@ -12,7 +12,13 @@ Room* current_room;
 
 
 void where_am_I(void) {
-    printf("You are in a %s.\n\n", current_room->name);
+    char* prefix = current_room->prefix;
+    if (prefix == NULL) {
+        printf("Estas en %s.\n", current_room->name);
+    } else {
+        printf("Estas en %s %s.\n", current_room->prefix, current_room->name);
+    }
+    printf("\n");
 }
 
 void look(void) {
@@ -45,12 +51,12 @@ void main_loop(void) {
         printf("\n> ");
         gets(buf);
 
-        if (stricmp(buf, "look") == 0) {
+        if (stricmp(buf, "mirar") == 0) {
             look();
-        } else if (stricmp(buf, "where am i") == 0) {
+        } else if (stricmp(buf, "donde estoy") == 0) {
             where_am_I();
         } else {
-            printf("You say '%s' but I don't understand.\n", buf);
+            printf("[Verbo o comando desconocido]\n", buf);
         };
     }
 }

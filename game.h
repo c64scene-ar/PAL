@@ -9,6 +9,7 @@ Exit;
 
 typedef struct {
     char* name;
+    char* prefix;
     char* alias;
     char* description;
     void* exits[8];
@@ -17,6 +18,7 @@ typedef struct {
 
 typedef struct {
     char* name;
+    char* prefix;
     char* alias;
     char** other_names;
     char* description;
