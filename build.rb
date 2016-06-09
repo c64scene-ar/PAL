@@ -11,7 +11,11 @@ require "erb"
 EXITS = %w(north north_east east south_east south south_west west north_west)
 
 def string(value)
-  value.nil? ? "NULL" : "\"#{value}\""
+  if value.nil?
+    "NULL"
+  else
+    value.split("\n").map { |line| "\"#{line}\"" }.join(" \\\n")
+  end
 end
 
 def parse_exit_id(exit_id)
