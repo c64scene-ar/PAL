@@ -17,12 +17,45 @@ typedef struct {
 } Room;
 
 typedef struct {
+    void (*look)();
+    void (*take)();
+    void (*open)();
+    void (*close)();
+    void (*pull)();
+    void (*push)();
+    void (*give)();
+    void (*talk)();
+    
+    
+} Actions;
+
+/*Actions VerbActions[] = {
+    "mirar",    (*Actions.look)(),
+    "agarrar",  (*take)(),
+    "abrir",    ??,
+    "cerrar",   ??,
+    "tirar",    ??,
+    "empujar",  ??,
+    "dar",      ??,
+    "hablar",   ??,
+
+};*/
+
+typedef struct {
     char* name;
     char* prefix;
     char* alias;
     char** other_names;
     char* description;
+    Actions * actions;
 } Object;
+
+
+
+typedef struct {
+    void** objects;        
+} Inventory;
+
 
 void where_am_I(void);
 void look(void);

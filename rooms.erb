@@ -5,12 +5,12 @@
 
 <% rooms.each do |room_id, attrs| %>
   static Room <%= room_id %> = {
-      <%= string(attrs['name'] || room_id) %>,
-      <%= string(attrs['prefix']) %>,
-      <%= string(attrs['alias']) %>,
-      <%= string(attrs['description']) %>,
-      { NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL },
-      NULL,
+      /*.name         = */ <%= string(attrs['name'] || room_id) %>,
+      /*.prefix       = */ <%= string(attrs['prefix']) %>,
+      /*.alias        = */ <%= string(attrs['alias']) %>,
+      /*.description  = */ <%= string(attrs['description']) %>,
+      /*.exits        = */ { NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL },
+      /*.objects      = */ NULL,
   };
 <% end %>
 

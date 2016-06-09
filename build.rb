@@ -35,6 +35,8 @@ doc = YAML.load_file(ARGV[0])
 
 game = doc.fetch('game')
 rooms = game.fetch('rooms')
+objects = game.fetch('objects')
 
 generate :rooms
 generate :game
+generate :objects

@@ -3,7 +3,8 @@ game:
   rooms:
     living:
       prefix: el
-      description: Te encontras en un living room algo pequeno y sucio, con un
+      description: |
+        Te encontras en un living room algo pequeno y sucio, con un
         sofa individual y un televisor que apenas quepan.
       south: cocina
       objects:
@@ -11,7 +12,8 @@ game:
         - televisor
     cocina:
       prefix: la
-      description: Una cocina ordinaria. Es aun mas pequena que el living.
+      description: |
+        Una cocina ordinaria. Es aun mas pequena que el living.
         Cerca de la puerta ves un freezer y un microondas arriba de el. La
         bacha esta llena de platos. Supones que de la noche anterior.
       north: living
@@ -20,3 +22,37 @@ game:
         - microondas
         - bacha
         - platos
+  objects:
+    sofa:
+      name: sofa
+      prefix: el
+      description: Un sofa reconfortante de cuero gastado
+      actions:
+        mirar: El sofa parece confortable
+        agarrar: Agarrar el sofa? No no. Y donde lo pondrias?
+        abrir: El sofa no puede abrirse
+        cerrar: El sofa no puede cerrarse
+        tirar: |
+          Por mas fuerza que hagas, no podes tirar el sofa
+          esto es muy loco. Empujarlo quizas?
+        empujar: Empujas el sofa.
+        hablar: 
+          - "Hablas con el sofa, pero no te responde."
+          - "Sigues intentandolo. El sofa sigue sin respuesta"
+          - "Te estas volviendo loco lentamente. El sofa no contesta"
+    microondas:
+      name: sofa
+      prefix: el
+      description: Un sofa reconfortante de cuero gastado
+
+      actions:
+        mirar: Es un microondas comun y corriente.
+        agarrar: Esta amurado a la pared.
+        abrir: Abris el microondas
+        cerrar: Cerras el microndas.
+        tirar: "Por mas que tires de el, esta amurado a la pared."
+        empujar: "Esta amurado, no podes empujarlo."
+        hablar: 
+          - Beep! * te vas volviendo loco lentamente *
+          - Beep Beep! KEH
+          - BEEP BEEP BEEP! B a s t a! o_O
