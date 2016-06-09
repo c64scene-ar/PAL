@@ -86,7 +86,7 @@ int parse_cmd(char * cmd)
             case 2: /* it should be an article/object */
             case 3: /* it should be an article/object */
             case 4: /* it should be an article/object */
-                if(parse_object(tok)) { object = tok };
+                if(parse_object(tok)) { object = tok; };
                 break;
             default:
                 printf("No entiendo que quieres decir.\n");

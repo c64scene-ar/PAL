@@ -3,7 +3,7 @@ game:
   rooms:
     living:
       prefix: el
-      description: |
+      description: >
         Te encontras en un living room algo pequeno y sucio, con un
         sofa individual y un televisor que apenas quepan.
       south: cocina
@@ -12,7 +12,7 @@ game:
         - televisor
     cocina:
       prefix: la
-      description: |
+      description: >
         Una cocina ordinaria. Es aun mas pequena que el living.
         Cerca de la puerta ves un freezer y un microondas arriba de el. La
         bacha esta llena de platos. Supones que de la noche anterior.
@@ -32,7 +32,7 @@ game:
         agarrar: Agarrar el sofa? No no. Y donde lo pondrias?
         abrir: El sofa no puede abrirse
         cerrar: El sofa no puede cerrarse
-        tirar: |
+        tirar: >
           Por mas fuerza que hagas, no podes tirar el sofa
           esto es muy loco. Empujarlo quizas?
         empujar: Empujas el sofa.
