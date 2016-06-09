@@ -12,12 +12,16 @@
   <% attrs['actions'].each do |action, response| %>
     void <%= object_id %>_action_<%= action %>() {
       printf(<%= string(Array(response)[0]) %>);
-    };
+    }
   <% end %>
 
-  static Action <%= object_id %>Actions[] = {
+  static Action <%= object_id %>Actions[] = 
+  {
     <% attrs['actions'].each_key do |action| %>
-     "<%= action %>", <%= object_id %>_action_<%= action %>,
+     { 
+        "<%= action %>", 
+        &<%= object_id %>_action_<%= action %>
+     },
     <% end %>
   };
 
