@@ -30,8 +30,6 @@ game:
       actions:
         mirar: El sofa parece confortable
         agarrar: Agarrar el sofa? No no. Y donde lo pondrias?
-        abrir: El sofa no puede abrirse
-        cerrar: El sofa no puede cerrarse
         tirar: >
           Por mas fuerza que hagas, no podes tirar el sofa
           esto es muy loco. Empujarlo quizas?
@@ -47,7 +45,6 @@ game:
 
       actions:
         mirar: Es un microondas comun y corriente.
-        agarrar: Esta amurado a la pared.
         abrir: Abris el microondas
         cerrar: Cerras el microndas.
         tirar: "Por mas que tires de el, esta amurado a la pared."

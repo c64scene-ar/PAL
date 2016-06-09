@@ -48,8 +48,6 @@ typedef struct {
     <% end %>
   };
 
-  static int n<%= object_id %>Commands = sizeof(<%= object_id %>Actions) / sizeof(*<%= object_id %>Actions);
-
   static Object <%= object_id %> = {
       /*.name         = */ <%= string(attrs['name'] || room_id) %>,
       /*.prefix       = */ <%= string(attrs['prefix']) %>,
@@ -57,6 +55,7 @@ typedef struct {
       /*.other_names  = */ <%= string(attrs['other_names']) %>,
       /*.description  = */ <%= string(attrs['description']) %>,
       /*.actions      = */ <%= object_id %>Actions,
+      /*.numActions   = */ sizeof(<%= object_id %>Actions) / sizeof(*<%= object_id %>Actions),
   };
 
 

@@ -9,8 +9,6 @@
 #define MAX_LINE 40
 #define MAX_EXITS 8
 
-#define DEBUG
-
 Room* current_room;
 
 
