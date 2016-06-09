@@ -1,7 +1,7 @@
 SPEC=example.yaml
 PRG=game.prg
 
-SRC=main.c game.c text.s
+SRC=main.c game.c text.s cmds.c
 BUILD=build.rb
 ERB=*.erb
 

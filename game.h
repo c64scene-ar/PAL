@@ -16,18 +16,6 @@ typedef struct {
     void** objects;
 } Room;
 
-typedef struct {
-    void (*look)();
-    void (*take)();
-    void (*open)();
-    void (*close)();
-    void (*pull)();
-    void (*push)();
-    void (*give)();
-    void (*talk)();
-    
-    
-} Actions;
 
 /*Actions VerbActions[] = {
     "mirar",    (*Actions.look)(),
@@ -47,7 +35,7 @@ typedef struct {
     char* alias;
     char** other_names;
     char* description;
-    Actions * actions;
+    void * actions;
 } Object;
 
 
