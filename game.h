@@ -30,7 +30,7 @@ typedef struct {
 
 typedef struct {
     char * verb;
-    void (*func)();
+    void (*func)(void);
 } Action;
 
 typedef struct {
