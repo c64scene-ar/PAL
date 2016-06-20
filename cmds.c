@@ -7,6 +7,8 @@
 #include "game.h"
 #include "cmds.h"
 
+extern Room* current_room;
+
 int parse_char_lowercase(char * str)
 {
     int i;
@@ -29,16 +31,19 @@ int parse_verb(char * tok){
 
     #ifdef DEBUG
         printf("Parsing verb: %s\n", tok);
+        printf("current_room is located at: %p\n", current_room);
     #endif 
         if(S_EQUAL(tok, "norte", "n"))
         {
             printf("Quieres ir al norte\n");
             if(current_room->exits[N] != NULL)
             {
+                #ifdef DEBUG
+                    printf("Movement points to: %p\n", current_room->exits[N]);
+                #endif
+
                 move_to(current_room->exits[N]);    
                 return true;
-            } else {
-                printf("North points to: %p\n", current_room->exits[N]);
             }
         }        
         if(S_EQUAL(tok, "sur", "s"))
@@ -46,10 +51,11 @@ int parse_verb(char * tok){
             printf("Quieres ir al sur\n");
             if(current_room->exits[S] != NULL)
             {
+                #ifdef DEBUG
+                    printf("Movement points to: %p\n", current_room->exits[S]);
+                #endif
                 move_to(current_room->exits[S]);    
                 return true;
-            } else {
-                printf("south points to: %p\n", current_room->exits[S]);
             }
         }        
         if(S_EQUAL(tok, "este", "e"))
@@ -57,10 +63,11 @@ int parse_verb(char * tok){
             printf("Quieres ir al este\n");
             if(current_room->exits[E] != NULL)
             {
+                #ifdef DEBUG
+                    printf("Movement points to: %p\n", current_room->exits[E]);
+                #endif
                 move_to(current_room->exits[E]);    
                 return true;
-            } else {
-                printf("East points to: %p\n", current_room->exits[E]);
             }
         }        
         if(S_EQUAL(tok, "oeste", "o"))
@@ -68,12 +75,14 @@ int parse_verb(char * tok){
             printf("Quieres ir al oeste\n");
             if(current_room->exits[W] != NULL)
             {
+                #ifdef DEBUG
+                    printf("Movement points to: %p\n", current_room->exits[W]);
+                #endif
                 move_to(current_room->exits[W]);    
                 return true;
-            } else {
-                printf("west points to: %p\n", current_room->exits[W]);
             }
         }
+
         printf("No entiendo a donde queres ir gato. Pa' ya no hay nada.\n");
         return false;
 }

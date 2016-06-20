@@ -14,6 +14,7 @@ static void initialize_world(void) {
 
 void start(void) {
     initialize_world();
+    printf("Initial room is located at: %p\n", &INITIAL_ROOM);
     move_to(&INITIAL_ROOM);
 }
 

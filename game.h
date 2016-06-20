@@ -43,7 +43,7 @@ void look(void);
 void move_to(Room* room);
 void init_screen(void);
 void main_loop(void);
-Room* current_room;
+
 
 
 #endif

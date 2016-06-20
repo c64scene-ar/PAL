@@ -9,6 +9,8 @@
 #define MAX_LINE 40
 #define MAX_EXITS 8
 
+Room* current_room;
+
 void where_am_I(void) {
     char* prefix = current_room->prefix;
     if (prefix == NULL) {
