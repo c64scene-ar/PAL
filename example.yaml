@@ -39,9 +39,9 @@ game:
           - "Sigues intentandolo. El sofa sigue sin respuesta"
           - "Te estas volviendo loco lentamente. El sofa no contesta"
     microondas:
-      name: sofa
+      name: microondas
       prefix: el
-      description: Un sofa reconfortante de cuero gastado
+      description: Un microondas con un hamster metido en el medio
 
       actions:
         mirar: Es un microondas comun y corriente.

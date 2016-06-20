@@ -1,28 +1,96 @@
 #include <string.h>
 #include <stdio.h>
 #include <conio.h>
+#include <ctype.h>
 
 #include "common.h"
+#include "game.h"
 #include "cmds.h"
+
+int parse_char_lowercase(char * str)
+{
+    int i;
+    for( i = 0; i < strlen(str); i++ )
+    {
+        *(str + i) = tolower(*(str + i)); 
+    }
+}
+
+#define S_EQUAL(tok, string, alias) ((strncmp(tok, string, sizeof(string)) == 0) \
+                                 || (strncmp(tok, alias , sizeof(alias)) == 0))
 
 /* returns true if a verb is detected */
 int parse_verb(char * tok){
+
+/* remember, all commands are 
+   processed as lowercase */
+
+   parse_char_lowercase(tok);
+
     #ifdef DEBUG
         printf("Parsing verb: %s\n", tok);
-    #endif
-
+    #endif 
+        if(S_EQUAL(tok, "norte", "n"))
+        {
+            printf("Quieres ir al norte\n");
+            if(current_room->exits[N] != NULL)
+            {
+                move_to(current_room->exits[N]);    
+                return true;
+            } else {
+                printf("North points to: %p\n", current_room->exits[N]);
+            }
+        }        
+        if(S_EQUAL(tok, "sur", "s"))
+        {
+            printf("Quieres ir al sur\n");
+            if(current_room->exits[S] != NULL)
+            {
+                move_to(current_room->exits[S]);    
+                return true;
+            } else {
+                printf("south points to: %p\n", current_room->exits[S]);
+            }
+        }        
+        if(S_EQUAL(tok, "este", "e"))
+        {
+            printf("Quieres ir al este\n");
+            if(current_room->exits[E] != NULL)
+            {
+                move_to(current_room->exits[E]);    
+                return true;
+            } else {
+                printf("East points to: %p\n", current_room->exits[E]);
+            }
+        }        
+        if(S_EQUAL(tok, "oeste", "o"))
+        {
+            printf("Quieres ir al oeste\n");
+            if(current_room->exits[W] != NULL)
+            {
+                move_to(current_room->exits[W]);    
+                return true;
+            } else {
+                printf("west points to: %p\n", current_room->exits[W]);
+            }
+        }
+        printf("No entiendo a donde queres ir gato. Pa' ya no hay nada.\n");
+        return false;
 }
 
 /* returns true if a object is detected */
 int parse_object(char * tok) {
+
+/* remember, all commands are 
+   processed as lowercase */
+
+    parse_char_lowercase(tok);
+
     #ifdef DEBUG
         printf("Parsing object: %s\n", tok);
     #endif
-}
-
-void parse_action(char * verb, char * object)
-{
-
+        /* if i didn-t encounter any object, then
+           ill print "dont know what to do" */
 }
 
 int parse_cmd(char * cmd)
@@ -65,5 +133,4 @@ int parse_cmd(char * cmd)
             return -1;    
         }
     }
-    parse_action(verb, object);
 }

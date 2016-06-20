@@ -6,8 +6,6 @@ int parse_verb(char * tok);
 /* returns true if a object is detected */
 int parse_object(char * tok);
 
-void parse_action(char * verb, char * object);
-
 int parse_cmd(char * cmd);
 
 
