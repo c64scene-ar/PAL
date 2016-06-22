@@ -10,7 +10,7 @@ DEV_IMAGE = "bin/$(GAME)_dev.d64"
 DIST_IMAGE = "bin/$(GAME).d64"
 
 CC = cl65
-CFLAGS = -d -g -Ln bin/$(GAME).sym -u __EXEHDR__ -t c64
+CFLAGS = -g -Ln bin/$(GAME).sym -u __EXEHDR__ -t c64
 C1541 = c1541
 X64 = x64
 EXOMIZER = exomizer
@@ -22,7 +22,9 @@ SPEC = src/$(GAME).yaml
 SRC = src/main.c src/game.c src/cmds.c
 BUILD = src/build.rb
 
-all: dev
+all: $(PRG)
+
+# TODO: Use Exomizer correctly
 dev: $(DEV_IMAGE)
 dist: $(DIST_IMAGE)
 
