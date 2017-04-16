@@ -1,4 +1,6 @@
+palc/node_modules
 *.o
+*.pil
 main.s
 gen_*.h
 *sublime-project
