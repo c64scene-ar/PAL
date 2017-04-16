@@ -19,11 +19,11 @@ Body
     
     
 ObjectName
-  = "DONDE?"_ object_name:text "!"
+  = "DONDE?"_ object_name:$text "!"
     { return object_name.toLowerCase() }
      
 ObjectDescription
-  = "DISE" object_desc:multi_text
+  = "DISE" object_desc:$multi_text
     { return object_desc }
 
 ObjectItems
@@ -35,11 +35,11 @@ ObjectExits
     { return object_exits }
     
 Exit
-  = exit:text _ "{" _ room:text _ "}" _
+  = exit:$text _ "{" _ room:$text _ "}" _
     { return { exit: exit, room: room } }
 
 Item
-  = ["] item_name:text ["] _ "{" 
+  = ["] item_name:$text ["] _ "{" 
       _ item_desc:ObjectDescription _ 
         _ item_actions:ItemAction+  _
         "}" 
@@ -52,7 +52,7 @@ Item
     }
         
 ItemAction
-  = item_action_verb:text _ "@" _
+  = item_action_verb:$text _ "@" _
       "{" 
           _ item_action_desc:ObjectDescription _
         "}" _ 
@@ -65,11 +65,11 @@ ItemAction
     }
 text
   = chars:[A-Za-z_ ]+
-    { return text().toLowerCase() }
+    { return chars }
     
 multi_text
-  = chars: _ "{" (!"}" [a-zA-Z_\r\n \.\,"\?]+) "}" _
-    { return text() }
+  = _ "{" txt:(!"}" [a-zA-Z_\r\n \."\?,]+) _ "}" 
+    { return txt }
 
 comment
  = "/*" (!"*/" .)* "*/"
