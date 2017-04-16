@@ -49,7 +49,7 @@ void main_loop(void) {
 
     while (true) {
         printf("\n> ");
-        gets(buf);
+        fgets(buf, sizeof(buf), stdin);
 
         /*if (stricmp(buf, "mirar") == 0) {
             look();
