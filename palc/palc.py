@@ -3,6 +3,7 @@ import subprocess
 import argparse
 import sys 
 import json
+import jinja2 
 
 class Palc:
 	pass
@@ -69,7 +70,7 @@ class Item:
 			self.actions.append(actionObj)
 
 	def __repr__(self):
-		return "\t\t Item (%s) (%s) %s\n" % (self.name, self.description, self.actions)
+		return "\t\t Item (%s) (%s) \n%s\n" % (self.name, self.description, self.actions)
 
 
 if __name__ == '__main__':

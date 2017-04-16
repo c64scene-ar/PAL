@@ -24,6 +24,11 @@ DONDE? LIVING! {
     Muy peligroso.
   }
   KOSAS? {
+     "microondas" {
+        DISE {
+           Un microondas que no le importa a nadie
+        }
+     }
      "sofa" {
         DISE { Hay Un sofa reconfortante de cuero gastado.
               El unico en la casa. }
@@ -47,9 +52,37 @@ DONDE? LIVING! {
   LAGORRA? {
     norte { COCINA }
     arriba { TERRAZA }
+    este { BANO }
   }
 
 }
+
+DONDE? BANO! {
+  DISE {
+    El banho tiene un extranho olor a humedad.
+    No te gusta.
+  }
+  KOSAS? {
+    "jabon" {
+      DISE {
+        Un jabon aroma al lavanda
+      }
+      usar @ {
+        DISE { te lavas las manos ... }
+      }
+    }
+    "shampoo" {
+      DISE { Un shampoo de tocador especial }
+      usar @ {
+        DISE { no puedes usar un shampoo asi como asi, estas loco? }
+      }
+    }
+  }
+  LAGORRA? {
+    oeste { LIVING }
+  }
+}
+
 ```
 
 

@@ -1,12 +1,12 @@
 Document
-  = _ body:Body _ { return body }
+  = _ body:Body+ _ { return body }
 
 Body
   = object_name:ObjectName _ "{" _ 
         object_desc:ObjectDescription _
         object_items:ObjectItems _
         object_exits:ObjectExits _
-      "}"
+      "}" _
     
     {
       return {
@@ -19,11 +19,11 @@ Body
     
     
 ObjectName
-  = "DONDE?"_ object_name:$text "!"
+  = _ "DONDE?"_ object_name:$text "!" 
     { return object_name.toLowerCase() }
      
 ObjectDescription
-  = "DISE" object_desc:$multi_text
+  = "DISE" _ object_desc:$multi_text _  
     { return object_desc }
 
 ObjectItems
@@ -41,8 +41,8 @@ Exit
 Item
   = ["] item_name:$text ["] _ "{" 
       _ item_desc:ObjectDescription _ 
-        _ item_actions:ItemAction+  _
-        "}" 
+        _ item_actions:ItemAction*  _
+        "}" _
     {
       return {
           item: item_name,

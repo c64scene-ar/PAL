@@ -49,8 +49,7 @@ void main_loop(void) {
 
     while (true) {
         printf("\n> ");
-        fgets(buf, sizeof(buf), stdin);
-
+        fgets(buf, sizeof(buf)*MAX_LINE, stdin);
         /*if (stricmp(buf, "mirar") == 0) {
             look();
         } else if (stricmp(buf, "donde estoy") == 0) {

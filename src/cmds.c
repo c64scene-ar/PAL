@@ -18,8 +18,8 @@ int parse_char_lowercase(char * str)
     }
 }
 
-#define S_EQUAL(tok, string, alias) ((strncmp(tok, string, sizeof(string)) == 0) \
-                                 || (strncmp(tok, alias , sizeof(alias)) == 0))
+#define S_EQUAL(tok, string, alias) ((strncmp(tok, string, sizeof(string)-1) == 0) \
+                                 || (strncmp(tok, alias , sizeof(alias)-1) == 0))
 
 /* returns true if a verb is detected */
 int parse_verb(char * tok){
@@ -81,6 +81,19 @@ int parse_verb(char * tok){
                 move_to(current_room->exits[W]);    
                 return true;
             }
+        }
+
+        if(S_EQUAL(tok, "mirar", "m"))
+        {
+            printf("Miras alrededor\n");
+            look();
+            return true;
+        }
+
+        if(S_EQUAL(tok, "donde", "d"))
+        {
+            where_am_I();
+            return true;
         }
 
         printf("No entiendo a donde queres ir gato. Pa' ya no hay nada.\n");
