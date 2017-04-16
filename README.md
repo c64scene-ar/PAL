@@ -6,7 +6,7 @@ A text adventure game for Commodore 64 (spanish).
 ### Punga Aventura Language (PAL)
 
 - Compiler *palc* currently on development.
-- Featuring *Punga* keywords (DONDE? DISE, KOSAS? LAGORRA?) and builtin actions for every item within a DONDE? object. Pungas standard guaranteed.
+- Featuring *Punga* keywords (DONDE? DISE, KOSAS? LAGORRA?) and builtin actions for every item within a KOSAS? object. Pungas standard guaranteed.
 - Easy to script, hard to miss.
 - Doesn't support NTSC yet.
 
