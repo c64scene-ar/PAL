@@ -1,18 +1,3 @@
-Pungaventura
-============
-
-A text adventure game for Commodore 64 (spanish).
-
-### Punga Aventura Language (PAL)
-
-- Compiler *palc* currently on development.
-- Featuring *Punga* keywords (DONDE? DISE, KOSAS? LAGORRA?) and builtin actions for every item within a DONDE? object. Pungas standard guaranteed.
-- Easy to script, hard to miss.
-- Doesn't support NTSC yet.
-
-Here is an example of the PAL language:
-
-```
 DONDE? LIVING! {
   DISE {
     Estas en living. Al norte no sabes que hay, y arriba menos. 
@@ -50,6 +35,5 @@ DONDE? LIVING! {
   }
 
 }
-```
 
 
