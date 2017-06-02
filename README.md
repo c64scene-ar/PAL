@@ -1,7 +1,7 @@
-Pungaventura
+PAL
 ============
 
-A text adventure game for Commodore 64 (spanish).
+Punga Aventura text adventure language for Commodore 64 (spanish).
 
 ### Punga Aventura Language (PAL)
 
